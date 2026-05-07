@@ -44,3 +44,9 @@
 - ✅ **Clean Typography** - Highly readable fonts
 
 ---
+## 🚀 Live Demo
+
+**[Click Here to Watch the Battle →](https://your-username.github.io/clash-of-titans-ai/)**
+
+---
+
