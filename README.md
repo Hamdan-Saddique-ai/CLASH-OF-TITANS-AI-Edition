@@ -26,4 +26,13 @@
 | ❤️ **Emotional AI** | Stories, Empathy, Persuasion | Narratives, Emotions, Connection |
 | ⚖️ **Judge AI** | Analysis, Scoring, Verdict | Logic, Emotion, Clarity, Impact |
 
---
+---
+## ✨ Features
+
+### 🎮 Core Features
+- ✅ **Two AI Personas** - Distinct Logical and Emotional debaters
+- ✅ **Smart Judge AI** - Scores on 4 metrics (Logic, Emotion, Clarity, Impact)
+- ✅ **Live Typing Effect** - Watch arguments appear in real-time
+- ✅ **Any Topic** - Enter any debate subject
+- ✅ **No API Key** - Works completely offline with mock AI
+
