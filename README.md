@@ -49,4 +49,10 @@
 **[Click Here to Watch the Battle →](https://your-username.github.io/clash-of-titans-ai/)**
 
 ---
+## 📸 Screenshots
 
+| Battle Arena | Judge Verdict |
+|--------------|---------------|
+| ![Battle Arena](https://via.placeholder.com/400x200?text=Two+AIs+Battling) | ![Judge Verdict](https://via.placeholder.com/400x200?text=Winner+Announced) |
+
+---
