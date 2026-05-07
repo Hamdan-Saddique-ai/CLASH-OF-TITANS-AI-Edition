@@ -36,3 +36,11 @@
 - ✅ **Any Topic** - Enter any debate subject
 - ✅ **No API Key** - Works completely offline with mock AI
 
+### 🎨 UI/UX Features
+- ✅ **Modern Gradient Design** - Eye-catching purple theme
+- ✅ **Responsive Layout** - Works on mobile, tablet, desktop
+- ✅ **Smooth Animations** - Card hover effects, typing animation
+- ✅ **Status Indicators** - Real-time battle progress
+- ✅ **Clean Typography** - Highly readable fonts
+
+---
