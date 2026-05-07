@@ -18,3 +18,12 @@
 ## 📖 About The Project
 
 **CLASH OF TITANS: AI Edition** is an interactive web application where two specialized AI agents battle in intellectual combat. A Supreme Judge AI evaluates both arguments and declares the ultimate winner.
+### 🎯 The Battle
+
+| Fighter | Style | Weapons |
+|---------|-------|---------|
+| 🧠 **Logical AI** | Facts, Data, Reasoning | Statistics, Evidence, Logic |
+| ❤️ **Emotional AI** | Stories, Empathy, Persuasion | Narratives, Emotions, Connection |
+| ⚖️ **Judge AI** | Analysis, Scoring, Verdict | Logic, Emotion, Clarity, Impact |
+
+--
