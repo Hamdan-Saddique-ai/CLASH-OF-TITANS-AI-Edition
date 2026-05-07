@@ -56,3 +56,5 @@
 | ![Battle Arena](https://via.placeholder.com/400x200?text=Two+AIs+Battling) | ![Judge Verdict](https://via.placeholder.com/400x200?text=Winner+Announced) |
 
 ---
+### Author
+**Hamdan Saddique**
