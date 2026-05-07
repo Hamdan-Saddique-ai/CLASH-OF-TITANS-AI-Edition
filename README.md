@@ -15,3 +15,6 @@
 </div>
 
 ---
+## 📖 About The Project
+
+**CLASH OF TITANS: AI Edition** is an interactive web application where two specialized AI agents battle in intellectual combat. A Supreme Judge AI evaluates both arguments and declares the ultimate winner.
