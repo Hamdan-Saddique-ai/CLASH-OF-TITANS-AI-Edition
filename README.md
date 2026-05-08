@@ -58,9 +58,9 @@
 ### Author
 **Hamdan Saddique**
 ## ⭐ If You Like This Project
-⭐ Star this repository
-🍴 Fork it
-💬 Share your feedback
-**For Free API and testing purpose contact**
-Linkedin: https://www.linkedin.com/in/hamdan-saddique-ai504b31402/
-Gmail: hamda.saddique.ai@gmail.com
+⭐ Star this repository         
+🍴 Fork it                  
+💬 Share your feedback               
+**For Free API and testing purpose contact**              
+Linkedin: https://www.linkedin.com/in/hamdan-saddique-ai504b31402/            
+Gmail: hamda.saddique.ai@gmail.com            
