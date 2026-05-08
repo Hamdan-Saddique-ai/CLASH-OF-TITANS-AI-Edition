@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #0a0f1e 0%, #0c1222 100%);
+    font-family: 'Segoe UI', 'Poppins', system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Main Container */
+.debate-arena {
+    max-width: 1600px;
+    margin: 0 auto;
+    background: rgba(10, 15, 30, 0.6);
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+/* Header */
+.header {
+    background: linear-gradient(95deg, #0f172a, #111827);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.header h1 {
+    font-size: 2rem;
+    background: linear-gradient(135deg, #60a5fa, #c084fc, #f472b6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.header p {
+    color: #94a3b8;
+    margin-top: 8px;
+}
+
+/* Topic Section */
+.topic-section {
+    margin: 1.5rem 2rem;
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.topic-label {
+    font-weight: 600;
+    color: #cbd5e1;
+    background: #1e293b;
+    padding: 0.5rem 1.2rem;
+    border-radius: 40px;
+    font-size: 0.85rem;
+}
+
+.topic-input-wrapper {
+    flex: 1;
+    display: flex;
+    gap: 1rem;
+}
+
+.topic-input-wrapper input {
+    flex: 1;
+    background: #020617;
+    border: 1px solid #334155;
+    padding: 0.8rem 1.2rem;
+    border-radius: 60px;
+    font-size: 1rem;
+    color: #f1f5f9;
+    outline: none;
+}
+
+.topic-input-wrapper input:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+}
+
+.random-btn {
+    background: #1e293b;
+    border: none;
+    padding: 0.6rem 1.4rem;
+    border-radius: 40px;
+    color: #b9e0ff;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.random-btn:hover {
+    background: #2d3a52;
+    color: white;
+}
+
+/* Debate Controls */
+.debate-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 2rem 1.5rem 2rem;
+}
+
+.primary-btn {
+    background: linear-gradient(95deg, #2563eb, #1e40af);
+    border: none;
+    padding: 12px 32px;
+    border-radius: 60px;
+    font-weight: bold;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.primary-btn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+}
+
+.secondary-btn {
+    background: #2d374b;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 60px;
+    font-weight: bold;
+    color: #e2e8f0;
+    cursor: pointer;
+}
+
+.secondary-btn:hover {
+    background: #3b4a66;
+}
+
+/* Half-Half Screen - Two Agents */
+.agents-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 0 2rem 1.5rem 2rem;
+}
+
+.agent-card {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.chatgpt {
+    background: linear-gradient(135deg, #0f2a3f, #0a1628);
+    border: 1px solid #10a37f;
+    box-shadow: 0 0 15px rgba(16, 163, 127, 0.1);
+}
+
+.deepseek {
+    background: linear-gradient(135deg, #1a1a2e, #0f0f23);
+    border: 1px solid #4d6bf5;
+    box-shadow: 0 0 15px rgba(77, 107, 245, 0.1);
+}
+
+.agent-header {
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.agent-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.agent-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.chatgpt .agent-name {
+    color: #10a37f;
+}
+
+.deepseek .agent-name {
+    color: #4d6bf5;
+}
+
+.agent-badge {
+    font-size: 0.65rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 8px;
+}
+
+.argument-box {
+    padding: 1.2rem;
+    min-height: 280px;
+}
+
+.argument-text {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #e2e8f0;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    border-left: 4px solid;
+}
+
+.chatgpt .argument-text {
+    border-left-color: #10a37f;
+}
+
+.deepseek .argument-text {
+    border-left-color: #4d6bf5;
+}
+
+.strength-meter {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 12px;
+    border-radius: 60px;
+}
+
+.strength-bar-bg {
+    flex: 1;
+    height: 8px;
+    background: #334155;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.strength-fill {
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease;
+}
+
+.chatgpt-fill {
+    background: linear-gradient(90deg, #10a37f, #2dd4bf);
+}
+
+.deepseek-fill {
+    background: linear-gradient(90deg, #4d6bf5, #818cf8);
+}
+
+.strength-score {
+    font-weight: 700;
+    min-width: 45px;
+}
+
+.winner-btn {
+    width: calc(100% - 2.4rem);
+    margin: 0 1.2rem 1.2rem 1.2rem;
+    padding: 10px;
+    border: none;
+    border-radius: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.chatgpt-win {
+    background: #10a37f20;
+    color: #2dd4bf;
+    border: 1px solid #10a37f;
+}
+
+.chatgpt-win:hover {
+    background: #10a37f;
+    color: white;
+}
+
+.deepseek-win {
+    background: #4d6bf520;
+    color: #818cf8;
+    border: 1px solid #4d6bf5;
+}
+
+.deepseek-win:hover {
+    background: #4d6bf5;
+    color: white;
+}
+
+/* Analysis Panel */
+.analysis-panel {
+    margin: 0 2rem 1.5rem 2rem;
+    padding: 1.2rem;
+    background: rgba(15, 23, 42, 0.8);
+    border-radius: 1.2rem;
+}
+
+.winner-display {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 60px;
+    margin-bottom: 1rem;
+    color: #fbbf24;
+}
+
+.stats-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.stat-card {
+    background: #111827;
+    padding: 10px 20px;
+    border-radius: 1rem;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    color: #9ca3af;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #f1f5f9;
+}
+
+.insight-text {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    padding-top: 10px;
+    border-top: 1px solid #334155;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.7rem;
+    color: #4b5563;
+    padding: 1rem;
+}
+
+@media (max-width: 800px) {
+    .agents-container {
+        flex-direction: column;
+    }
+    .topic-input-wrapper {
+        flex-direction: column;
+    }
+}

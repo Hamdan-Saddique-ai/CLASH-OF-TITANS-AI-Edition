@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>AI Debate Arena | ChatGPT vs DeepSeek</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="debate-arena">
+        <!-- Header -->
+        <div class="header">
+            <h1>🤖 AI DEBATE ARENA ⚡</h1>
+            <p>ChatGPT vs DeepSeek — Dono AI debate karein, aap decide karein winner!</p>
+        </div>
+
+        <!-- Topic Input Section -->
+        <div class="topic-section">
+            <div class="topic-label">📢 DEBATE TOPIC</div>
+            <div class="topic-input-wrapper">
+                <input type="text" id="topicInput" placeholder="Koi bhi topic likhein...">
+                <button id="randomTopicBtn" class="random-btn">🎲 RANDOM TOPIC</button>
+            </div>
+        </div>
+
+        <!-- Debate Buttons -->
+        <div class="debate-controls">
+            <button id="startDebateBtn" class="primary-btn">🚀 START DEBATE</button>
+            <button id="resetBtn" class="secondary-btn">🔄 RESET</button>
+        </div>
+
+        <!-- Half-Half Screen: Two AI Agents -->
+        <div class="agents-container">
+            <!-- ChatGPT (Left) -->
+            <div class="agent-card chatgpt">
+                <div class="agent-header">
+                    <div class="agent-icon">🤖</div>
+                    <div>
+                        <span class="agent-name">ChatGPT</span>
+                        <span class="agent-badge">OpenAI</span>
+                    </div>
+                </div>
+                <div class="argument-box">
+                    <div class="argument-text" id="chatgptArgument">
+                        Topic select karein aur "Start Debate" dabayein...
+                    </div>
+                    <div class="strength-meter">
+                        <span>💪 ARGUMENT STRENGTH</span>
+                        <div class="strength-bar-bg">
+                            <div class="strength-fill chatgpt-fill" id="chatgptFill"></div>
+                        </div>
+                        <span class="strength-score" id="chatgptStrength">0%</span>
+                    </div>
+                </div>
+                <button class="winner-btn chatgpt-win" id="chatgptWinBtn">🏆 ChatGPT WINNER</button>
+            </div>
+
+            <!-- DeepSeek (Right) -->
+            <div class="agent-card deepseek">
+                <div class="agent-header">
+                    <div class="agent-icon">🐋</div>
+                    <div>
+                        <span class="agent-name">DeepSeek</span>
+                        <span class="agent-badge">深度求索</span>
+                    </div>
+                </div>
+                <div class="argument-box">
+                    <div class="argument-text" id="deepseekArgument">
+                        Topic select karein aur "Start Debate" dabayein...
+                    </div>
+                    <div class="strength-meter">
+                        <span>💪 ARGUMENT STRENGTH</span>
+                        <div class="strength-bar-bg">
+                            <div class="strength-fill deepseek-fill" id="deepseekFill"></div>
+                        </div>
+                        <span class="strength-score" id="deepseekStrength">0%</span>
+                    </div>
+                </div>
+                <button class="winner-btn deepseek-win" id="deepseekWinBtn">🏆 DeepSeek WINNER</button>
+            </div>
+        </div>
+
+        <!-- Winner & Analysis Panel -->
+        <div class="analysis-panel">
+            <div class="winner-display" id="winnerDisplay">
+                ⚖️ Koi winner select nahi kiya gaya
+            </div>
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="stat-label">ChatGPT AVG POWER</div>
+                    <div class="stat-value" id="avgChatgpt">0%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">DeepSeek AVG POWER</div>
+                    <div class="stat-value" id="avgDeepseek">0%</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">TOTAL DEBATES</div>
+                    <div class="stat-value" id="debateCount">0</div>
+                </div>
+            </div>
+            <div class="insight-text" id="insightText">
+                💡 Tip: Koi bhi topic likhein, dono AI debate kareinge. Aap judge karein ki kiski argument better thi!
+            </div>
+        </div>
+
+        <footer>
+            ⚡ AI Debate Simulator | ChatGPT vs DeepSeek | Aap decide karein winner!
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
