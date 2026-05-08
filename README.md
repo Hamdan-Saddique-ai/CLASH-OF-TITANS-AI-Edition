@@ -51,9 +51,8 @@
 ---
 ## 📸 Screenshots
 
-| Battle Arena | Judge Verdict |
-|--------------|---------------|
-| ![Battle Arena](https://via.placeholder.com/400x200?text=Two+AIs+Battling) | ![Judge Verdict](https://via.placeholder.com/400x200?text=Winner+Announced) |
+<img width="1332" height="582" alt="Image" src="https://github.com/user-attachments/assets/59809bd4-4c75-422c-b1a9-fe2b20efb502" />
+
 
 ---
 ### Author
