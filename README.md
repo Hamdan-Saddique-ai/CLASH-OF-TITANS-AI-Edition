@@ -1,4 +1,5 @@
 # ⚔️ CLASH OF TITANS: AI Edition ⚔️
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/1ea35cbe-87b7-4720-85a5-ba9f159714ac" />
 
 <div align="center">
 
@@ -44,11 +45,8 @@
 - ✅ **Clean Typography** - Highly readable fonts
 
 ---
-## 🚀 Live Demo
 
-<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/1ea35cbe-87b7-4720-85a5-ba9f159714ac" />
 
----
 ## 📸 Screenshots
 
 <img width="1332" height="582" alt="Image" src="https://github.com/user-attachments/assets/59809bd4-4c75-422c-b1a9-fe2b20efb502" />
