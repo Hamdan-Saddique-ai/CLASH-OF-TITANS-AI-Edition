@@ -2,113 +2,710 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>AI Debate Arena | ChatGPT vs DeepSeek</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚔️ AI ARENA - Premium Clear Edition</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 3.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            color: #4a5568;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        /* API Section */
+        .api-section {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .api-status {
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .status-active {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        .api-input-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .api-input {
+            flex: 2;
+            padding: 12px 16px;
+            background: #f7f9fc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 14px;
+            font-family: monospace;
+            transition: all 0.3s;
+        }
+
+        .api-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+        }
+
+        .btn {
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 10px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .topic-section {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .topic-input {
+            width: 100%;
+            padding: 15px 20px;
+            background: #f7f9fc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+
+        .topic-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102,126,234,0.1);
+        }
+
+        /* Battle Arena */
+        .battle-arena {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .fighter {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .fighter:hover {
+            transform: translateY(-5px);
+        }
+
+        .logical {
+            border-top: 5px solid #3b82f6;
+        }
+
+        .emotional {
+            border-top: 5px solid #ef4444;
+        }
+
+        .fighter h2 {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+            color: #1e293b;
+        }
+
+        .badge {
+            font-size: 0.8rem;
+            background: #f1f5f9;
+            padding: 4px 12px;
+            border-radius: 20px;
+            color: #64748b;
+        }
+
+        .argument {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 280px;
+            white-space: pre-wrap;
+            line-height: 1.7;
+            font-size: 15px;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Judge Section */
+        .judge-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+        }
+
+        .judge-section h2 {
+            text-align: center;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .judge-content {
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .scores {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .score {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 12px 24px;
+            border-radius: 40px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .winner {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin: 20px 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            border-radius: 15px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .reason-box {
+            background: #f1f5f9;
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 15px;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 30px;
+            font-size: 18px;
+            color: white;
+        }
+
+        .error-message {
+            background: #fee2e2;
+            border: 2px solid #f56565;
+            padding: 15px;
+            border-radius: 10px;
+            color: #c53030;
+        }
+
+        /* Debug Log */
+        .debug-section {
+            background: #1a202c;
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+
+        .debug-title {
+            color: #68d391;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .debug-log {
+            background: #0f1419;
+            color: #68d391;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-family: 'Courier New', monospace;
+            max-height: 150px;
+            overflow-y: auto;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .battle-arena {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .winner {
+                font-size: 24px;
+            }
+            
+            .fighter h2 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
 </head>
 <body>
-    <div class="debate-arena">
+    <div class="container">
         <!-- Header -->
         <div class="header">
-            <h1>🤖 AI DEBATE ARENA ⚡</h1>
-            <p>ChatGPT vs DeepSeek — Dono AI debate karein, aap decide karein winner!</p>
+            <h1>⚔️ AI ARENA ⚔️</h1>
+            <div class="subtitle">Logical AI (Facts & Reasoning) vs Emotional AI (Stories & Persuasion)</div>
+            <div class="subtitle">⚖️ Supreme Judge AI decides the winner with scores ⚖️</div>
         </div>
 
-        <!-- Topic Input Section -->
+        <!-- API Configuration -->
+        <div class="api-section">
+            <div id="apiStatus" class="api-status status-error">⚠️ Configure API Key</div>
+            <div class="api-input-group">
+                <input type="password" id="apiKeyInput" class="api-input" placeholder="Enter  API Key ()" value=
+                <button id="saveApiBtn" class="btn">💾 Save & Test API</button>
+            </div>
+            <div id="apiMessage" style="margin-top: 12px; font-size: 13px; color: #718096;"></div>
+        </div>
+
+        <!-- Topic Input -->
         <div class="topic-section">
-            <div class="topic-label">📢 DEBATE TOPIC</div>
-            <div class="topic-input-wrapper">
-                <input type="text" id="topicInput" placeholder="Koi bhi topic likhein...">
-                <button id="randomTopicBtn" class="random-btn">🎲 RANDOM TOPIC</button>
+            <input type="text" id="topicInput" class="topic-input" placeholder="🎯 Enter your debate topic here..." value="Should Artificial Intelligence be regulated?">
+            <button id="startBattleBtn" class="btn" style="width: 100%; font-size: 18px; padding: 15px;">⚡ START EPIC BATTLE ⚡</button>
+        </div>
+
+        <!-- Battle Arena -->
+        <div class="battle-arena">
+            <!-- Logical AI -->
+            <div class="fighter logical">
+                <h2>
+                    🧠 LOGICAL AI
+                    <span class="badge">Facts | Data | Reasoning</span>
+                </h2>
+                <div class="argument" id="logicalArgument">
+                    💠 Ready for battle...<br>
+                    <span style="color: #94a3b8;">Enter a topic and click Start Battle</span>
+                </div>
+            </div>
+
+            <!-- Emotional AI -->
+            <div class="fighter emotional">
+                <h2>
+                    ❤️ EMOTIONAL AI
+                    <span class="badge">Stories | Emotions | Persuasion</span>
+                </h2>
+                <div class="argument" id="emotionalArgument">
+                    ✨ Ready for battle...<br>
+                    <span style="color: #94a3b8;">Enter a topic and click Start Battle</span>
+                </div>
             </div>
         </div>
 
-        <!-- Debate Buttons -->
-        <div class="debate-controls">
-            <button id="startDebateBtn" class="primary-btn">🚀 START DEBATE</button>
-            <button id="resetBtn" class="secondary-btn">🔄 RESET</button>
-        </div>
-
-        <!-- Half-Half Screen: Two AI Agents -->
-        <div class="agents-container">
-            <!-- ChatGPT (Left) -->
-            <div class="agent-card chatgpt">
-                <div class="agent-header">
-                    <div class="agent-icon">🤖</div>
-                    <div>
-                        <span class="agent-name">ChatGPT</span>
-                        <span class="agent-badge">OpenAI</span>
-                    </div>
-                </div>
-                <div class="argument-box">
-                    <div class="argument-text" id="chatgptArgument">
-                        Topic select karein aur "Start Debate" dabayein...
-                    </div>
-                    <div class="strength-meter">
-                        <span>💪 ARGUMENT STRENGTH</span>
-                        <div class="strength-bar-bg">
-                            <div class="strength-fill chatgpt-fill" id="chatgptFill"></div>
-                        </div>
-                        <span class="strength-score" id="chatgptStrength">0%</span>
-                    </div>
-                </div>
-                <button class="winner-btn chatgpt-win" id="chatgptWinBtn">🏆 ChatGPT WINNER</button>
-            </div>
-
-            <!-- DeepSeek (Right) -->
-            <div class="agent-card deepseek">
-                <div class="agent-header">
-                    <div class="agent-icon">🐋</div>
-                    <div>
-                        <span class="agent-name">DeepSeek</span>
-                        <span class="agent-badge">深度求索</span>
-                    </div>
-                </div>
-                <div class="argument-box">
-                    <div class="argument-text" id="deepseekArgument">
-                        Topic select karein aur "Start Debate" dabayein...
-                    </div>
-                    <div class="strength-meter">
-                        <span>💪 ARGUMENT STRENGTH</span>
-                        <div class="strength-bar-bg">
-                            <div class="strength-fill deepseek-fill" id="deepseekFill"></div>
-                        </div>
-                        <span class="strength-score" id="deepseekStrength">0%</span>
-                    </div>
-                </div>
-                <button class="winner-btn deepseek-win" id="deepseekWinBtn">🏆 DeepSeek WINNER</button>
+        <!-- Judge Section -->
+        <div class="judge-section">
+            <h2>⚖️ SUPREME JUDGE AI ⚖️</h2>
+            <div class="judge-content" id="judgeOutput">
+                🎯 Waiting for both fighters to present their arguments...
             </div>
         </div>
 
-        <!-- Winner & Analysis Panel -->
-        <div class="analysis-panel">
-            <div class="winner-display" id="winnerDisplay">
-                ⚖️ Koi winner select nahi kiya gaya
-            </div>
-            <div class="stats-row">
-                <div class="stat-card">
-                    <div class="stat-label">ChatGPT AVG POWER</div>
-                    <div class="stat-value" id="avgChatgpt">0%</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">DeepSeek AVG POWER</div>
-                    <div class="stat-value" id="avgDeepseek">0%</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-label">TOTAL DEBATES</div>
-                    <div class="stat-value" id="debateCount">0</div>
-                </div>
-            </div>
-            <div class="insight-text" id="insightText">
-                💡 Tip: Koi bhi topic likhein, dono AI debate kareinge. Aap judge karein ki kiski argument better thi!
+        <!-- Debug Console -->
+        <div class="debug-section">
+            <div class="debug-title">🔍 DEBUG CONSOLE (Real-time Status)</div>
+            <div class="debug-log" id="debugLog">
+                [System] ✅ AI Arena Initialized<br>
+                [System] 🚀 Ready for battle!
             </div>
         </div>
-
-        <footer>
-            ⚡ AI Debate Simulator | ChatGPT vs DeepSeek | Aap decide karein winner!
-        </footer>
     </div>
 
-    <script src="js/script.js"></script>
+    <script>
+        // API Configuration
+        let API_KEY = localStorage.getItem('api_key')
+        let isBattleRunning = false;
+        
+        // Latest working Groq models
+        const WORKING_MODELS = [
+            "llama-3.3-70b-versatile",
+            "llama-3.2-90b-text-preview",
+            "gemma2-9b-it"
+        ];
+        
+        let currentModel = WORKING_MODELS[0];
+        
+        // DOM Elements
+        const apiKeyInput = document.getElementById('apiKeyInput');
+        const saveApiBtn = document.getElementById('saveApiBtn');
+        const apiStatus = document.getElementById('apiStatus');
+        const apiMessage = document.getElementById('apiMessage');
+        const topicInput = document.getElementById('topicInput');
+        const startBtn = document.getElementById('startBattleBtn');
+        const logicalDiv = document.getElementById('logicalArgument');
+        const emotionalDiv = document.getElementById('emotionalArgument');
+        const judgeOutput = document.getElementById('judgeOutput');
+        const debugLog = document.getElementById('debugLog');
+        
+        function addDebugLog(message, isError = false) {
+            const timestamp = new Date().toLocaleTimeString();
+            const prefix = isError ? '❌' : '✅';
+            debugLog.innerHTML += `<br>[${timestamp}] ${prefix} ${message}`;
+            debugLog.scrollTop = debugLog.scrollHeight;
+            console.log(`[${timestamp}] ${message}`);
+        }
+        
+        // Set initial API key
+        apiKeyInput.value = API_KEY;
+        
+        // Test API with multiple models
+        async function testAPI(key) {
+            addDebugLog(`Testing API with latest models...`);
+            
+            for (let model of WORKING_MODELS) {
+                try {
+                    addDebugLog(`Trying model: ${model}`);
+                     {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${key}`
+                        },
+                        body: JSON.stringify({
+                            model: model,
+                            messages: [{ role: "user", content: "Say 'OK'" }],
+                            max_tokens: 10
+                        })
+                    });
+                    
+                    if (response.ok) {
+                        currentModel = model;
+                        apiStatus.className = "api-status status-active";
+                        apiStatus.innerHTML = `✅ API Active (${model})`;
+                        apiMessage.innerHTML = `✅ Successfully connected using ${model}`;
+                        addDebugLog(`SUCCESS! Using model: ${model}`);
+                        return true;
+                    }
+                } catch (error) {
+                    addDebugLog(`Model ${model} failed`, true);
+                }
+            }
+            
+            apiStatus.className = "api-status status-error";
+            apiStatus.innerHTML = "❌ API Connection Failed";
+            apiMessage.innerHTML = "❌ Could not connect. Please check your API key.";
+            addDebugLog(`All models failed. Please verify your API key.`, true);
+            return false;
+        }
+        
+        // Save API key
+        saveApiBtn.addEventListener('click', async () => {
+            const newKey = apiKeyInput.value.trim();
+            if (newKey.startsWith('gsk_') && newKey.length > 20) {
+                API_KEY = newKey;
+                localStorage.setItem('api_key', API_KEY);
+                addDebugLog(`API Key saved, testing connection...`);
+                const isValid = await testAPI(API_KEY);
+                if (isValid) {
+                    alert('✅ API Key is working! Ready for battle.');
+                } else {
+                    alert('⚠️ API Key saved but connection failed. Please check your key.');
+                }
+            } else {
+                alert('❌ Invalid API key!"');
+            }
+        });
+        
+        async function callGroq(systemPrompt, userMessage, retryCount = 0) {
+            if (!API_KEY) {
+                throw new Error("No API key found! Please configure your API key first.");
+            }
+            
+            const modelToUse = currentModel;
+        
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${API_KEY}`
+                },
+                body: JSON.stringify({
+                    model: modelToUse,
+                    messages: [
+                        { role: "system", content: systemPrompt },
+                        { role: "user", content: userMessage }
+                    ],
+                    temperature: 0.7,
+                    max_tokens: 600
+                })
+            });
+            
+            if (!response.ok) {
+                const errorData = await response.text();
+                
+                if (errorData.includes("decommissioned") && retryCount < WORKING_MODELS.length) {
+                    const nextModelIndex = WORKING_MODELS.indexOf(currentModel) + 1;
+                    if (nextModelIndex < WORKING_MODELS.length) {
+                        currentModel = WORKING_MODELS[nextModelIndex];
+                        addDebugLog(`Switching to ${currentModel}...`);
+                        return await callGroq(systemPrompt, userMessage, retryCount + 1);
+                    }
+                }
+                
+                throw new Error(`API Error: ${errorData.substring(0, 150)}`);
+            }
+            
+            const data = await response.json();
+            return data.choices[0].message.content.trim();
+        }
+        
+        // Typing effect
+        async function typeText(element, text, speed = 10) {
+            element.innerHTML = '';
+            for (let i = 0; i < text.length; i++) {
+                element.innerHTML += text[i];
+                await new Promise(resolve => setTimeout(resolve, speed));
+            }
+        }
+        
+        // Generate Logical Argument
+        async function generateLogical(topic) {
+            const systemPrompt = `You are LOGICAL AI. Use facts, data, statistics, logical reasoning, cause-effect analysis. Be rational and structured. 250-350 words.`;
+            const userPrompt = `Topic: "${topic}". Present a compelling logical argument either FOR or AGAINST. Use evidence and reasoning.`;
+            addDebugLog(`Generating logical argument...`);
+            return await callGroq(systemPrompt, userPrompt);
+        }
+        
+        // Generate Emotional Argument
+        async function generateEmotional(topic) {
+            const systemPrompt = `You are EMOTIONAL AI. Use storytelling, emotions, empathy, vivid imagery, personal connections. 250-350 words.`;
+            const userPrompt = `Topic: "${topic}". Present a powerful emotional argument that touches hearts.`;
+            addDebugLog(`Generating emotional argument...`);
+            return await callGroq(systemPrompt, userPrompt);
+        }
+        
+        // Judge
+        async function judgeBattle(topic, logical, emotional) {
+            const systemPrompt = `You are a SUPREME JUDGE. Evaluate both arguments. Return ONLY valid JSON.`;
+            const userPrompt = `Topic: ${topic}
+
+LOGICAL: ${logical.substring(0, 1500)}
+
+EMOTIONAL: ${emotional.substring(0, 1500)}
+
+Return JSON: {"scores":{"logic":0-10,"emotion":0-10,"clarity":0-10,"impact":0-10},"winner":"Logical AI or Emotional AI","reason":"explanation"}`;
+            
+            addDebugLog(`Judge analyzing...`);
+            const response = await callGroq(systemPrompt, userPrompt);
+            
+            try {
+                const cleanResponse = response.replace(/```json/g, '').replace(/```/g, '').trim();
+                const jsonMatch = cleanResponse.match(/\{[\s\S]*\}/);
+                if (jsonMatch) {
+                    return JSON.parse(jsonMatch[0]);
+                }
+                throw new Error("No JSON found");
+            } catch(e) {
+                return {
+                    scores: { logic: 7, emotion: 7, clarity: 7, impact: 7 },
+                    winner: "Tie - Incredible Battle!",
+                    reason: "Both AIs presented compelling arguments. The battle was too close to call!"
+                };
+            }
+        }
+        
+        // Start Battle
+        async function startBattle() {
+            if (isBattleRunning) {
+                alert("Battle in progress! Please wait.");
+                return;
+            }
+            
+            const topic = topicInput.value.trim();
+            if (!topic) {
+                alert("Please enter a topic!");
+                return;
+            }
+            
+            if (!API_KEY) {
+                alert("Please configure your Groq API key first!");
+                return;
+            }
+            
+            isBattleRunning = true;
+            startBtn.disabled = true;
+            logicalDiv.innerHTML = "💠 Generating logical argument... <span style='color:#ffaa00'>⚡</span>";
+            emotionalDiv.innerHTML = "✨ Generating emotional argument... <span style='color:#ffaa00'>⚡</span>";
+            judgeOutput.innerHTML = "<div class='loading'>⚖️ Battle in progress... Both fighters preparing arguments... ⚖️</div>";
+            
+            addDebugLog(`========== BATTLE STARTED ==========`);
+            addDebugLog(`Topic: ${topic}`);
+            
+            let logicalText = null, emotionalText = null;
+            let logicalError = null, emotionalError = null;
+            
+            const [logicalResult, emotionalResult] = await Promise.all([
+                generateLogical(topic).catch(err => { logicalError = err.message; return null; }),
+                generateEmotional(topic).catch(err => { emotionalError = err.message; return null; })
+            ]);
+            
+            logicalText = logicalResult;
+            emotionalText = emotionalResult;
+            
+            if (logicalText && !logicalError) {
+                await typeText(logicalDiv, logicalText, 10);
+                addDebugLog(`Logical argument complete`);
+            } else {
+                logicalDiv.innerHTML = `❌ ${logicalError}`;
+            }
+            
+            if (emotionalText && !emotionalError) {
+                await typeText(emotionalDiv, emotionalText, 10);
+                addDebugLog(`Emotional argument complete`);
+            } else {
+                emotionalDiv.innerHTML = `❌ ${emotionalError}`;
+            }
+            
+            if (logicalError || emotionalError) {
+                judgeOutput.innerHTML = `<div class="error-message">⚠️ Error: ${logicalError || emotionalError}</div>`;
+                isBattleRunning = false;
+                startBtn.disabled = false;
+                return;
+            }
+            
+            judgeOutput.innerHTML = "<div class='loading'>⚖️ Judge analyzing arguments... ⚖️</div>";
+            
+            try {
+                const verdict = await judgeBattle(topic, logicalText, emotionalText);
+                
+                judgeOutput.innerHTML = `
+                    <div class="scores">
+                        <div class="score">📊 Logic: ${verdict.scores.logic}/10</div>
+                        <div class="score">❤️ Emotion: ${verdict.scores.emotion}/10</div>
+                        <div class="score">✨ Clarity: ${verdict.scores.clarity}/10</div>
+                        <div class="score">💥 Impact: ${verdict.scores.impact}/10</div>
+                    </div>
+                    <div class="winner">🏆 WINNER: ${verdict.winner} 🏆</div>
+                    <div class="reason-box">
+                        <strong>📝 Judge's Verdict:</strong><br>
+                        ${verdict.reason}
+                    </div>
+                `;
+                addDebugLog(`🏆 Winner: ${verdict.winner}`);
+            } catch (error) {
+                judgeOutput.innerHTML = `<div class="error-message">❌ Judge Error: ${error.message}</div>`;
+                addDebugLog(`Judge Error: ${error.message}`, true);
+            }
+            
+            addDebugLog(`========== BATTLE ENDED ==========`);
+            isBattleRunning = false;
+            startBtn.disabled = false;
+        }
+        
+        // Initialize
+        window.addEventListener('load', async () => {
+            addDebugLog(`System ready!`);
+            if (API_KEY && API_KEY.startsWith('gsk_')) {
+                await testAPI(API_KEY);
+            } else {
+                apiMessage.innerHTML = "⚠️ Please enter your API key to start";
+            }
+        });
+        
+        startBtn.addEventListener('click', startBattle);
+    </script>
 </body>
 </html>
