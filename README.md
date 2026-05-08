@@ -46,7 +46,7 @@
 ---
 ## 🚀 Live Demo
 
-**[Click Here to Watch the Battle →](https://your-username.github.io/clash-of-titans-ai/)**
+<img width="1536" height="1024" alt="Image" src="https://github.com/user-attachments/assets/1ea35cbe-87b7-4720-85a5-ba9f159714ac" />
 
 ---
 ## 📸 Screenshots
